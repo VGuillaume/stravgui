@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: stravgui
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/stravgui
+    username: stravgui
+    password: stravgui
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+stravgui:
+  jwt:
+    secret: ${JWT_SECRET:changeit-local-dev-secret-key-min-32-chars-long}
+    expiration-minutes: 60

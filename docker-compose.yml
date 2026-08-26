@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: stravgui-postgres
+    environment:
+      POSTGRES_DB: stravgui
+      POSTGRES_USER: stravgui
+      POSTGRES_PASSWORD: stravgui
+    ports:
+      - "5433:5432"
+    volumes:
+      - stravgui-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  stravgui-postgres-data:
