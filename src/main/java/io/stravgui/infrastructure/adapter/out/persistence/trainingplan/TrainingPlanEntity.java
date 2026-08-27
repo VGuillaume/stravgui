@@ -25,7 +25,7 @@ public class TrainingPlanEntity {
     private LocalDate raceDate;
 
     @OneToMany(mappedBy = "trainingPlan", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private final List<WeeklyTargetEntity> weeklyTargets = new ArrayList<>();
+    private List<WeeklyTargetEntity> weeklyTargets = new ArrayList<>();
 
     public TrainingPlanEntity(UUID id, UUID athleteId, LocalDate raceDate) {
         this.id = id;

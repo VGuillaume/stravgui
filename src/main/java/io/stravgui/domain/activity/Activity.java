@@ -14,7 +14,7 @@ public class Activity {
     private final Distance distance;
     private final LocalDate startDate;
 
-    private Activity(ActivityId id, AthleteId athleteId, String stravaExternalId,
+    public Activity(ActivityId id, AthleteId athleteId, String stravaExternalId,
                      ActivityType type, Distance distance, LocalDate startDate) {
         this.id = id;
         this.athleteId = athleteId;
@@ -26,6 +26,7 @@ public class Activity {
 
     public static Activity importFromStrava(AthleteId athleteId, String stravaExternalId,
                                             ActivityType type, Distance distance, LocalDate startDate) {
+        Objects.requireNonNull(athleteId, "athleteId ne peut pas être null");
         Objects.requireNonNull(stravaExternalId, "stravaExternalId ne peut pas être null");
         return new Activity(ActivityId.generate(), athleteId, stravaExternalId, type, distance, startDate);
     }
