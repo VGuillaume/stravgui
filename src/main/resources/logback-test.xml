@@ -1,0 +1,18 @@
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Supprime le bruit de fermeture de connexion lors de l'arrêt du conteneur Testcontainers -->
+    <logger name="com.zaxxer.hikari.pool.ProxyConnection" level="OFF"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

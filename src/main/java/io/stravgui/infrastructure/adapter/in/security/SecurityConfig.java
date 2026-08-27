@@ -24,6 +24,9 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable) // API stateless, jamais de token CSRF envoyé par le client
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .exceptionHandling(exceptions -> exceptions
+                        .authenticationEntryPoint(new JwtAuthenticationEntryPoint())
+                )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(PUBLIC_ENDPOINTS).permitAll()
                         .anyRequest().authenticated()

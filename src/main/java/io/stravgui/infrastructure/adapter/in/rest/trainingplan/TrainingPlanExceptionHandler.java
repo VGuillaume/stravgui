@@ -9,7 +9,7 @@ import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestControllerAdvice(basePackages = "io.stravgui.adapter.in.rest.trainingplan")
+@RestControllerAdvice(basePackages = "io.stravgui.infrastructure.adapter.in.rest.trainingplan")
 public class TrainingPlanExceptionHandler {
 
     @ExceptionHandler(TrainingPlanNotFoundException.class)
