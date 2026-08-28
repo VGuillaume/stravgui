@@ -28,6 +28,7 @@ public class ActivityEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @Convert(disableConversion = true) // Désactivation du check auto sur ce champ
     private ActivityType type;
 
     @Column(name = "distance_km", nullable = false)

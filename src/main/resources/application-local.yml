@@ -1,0 +1,4 @@
+stravgui:
+  encryption:
+    secret: un-secret-local-suffisamment-long
+    salt: 9e82cd48924ea438
